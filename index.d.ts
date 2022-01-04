@@ -1,13 +1,13 @@
 import { TextFieldProps } from "@mui/material";
 import * as React from "react";
 
-export interface CountryInfo = {
-  dialCode?: string
-  name?: string
-  countryCode?: string
+export interface CountryInfo {
+  dialCode?: string;
+  name?: string;
+  countryCode?: string;
 }
 
-export interface MuiPhoneNumberProps = TextFieldProps extends {
+export type MuiPhoneNumberProps =  Partial<TextFieldProps> & {
   autoFormat?: boolean;
   classes?: any;
   countryCodeEditable?: boolean;
@@ -28,6 +28,5 @@ export interface MuiPhoneNumberProps = TextFieldProps extends {
   regions?: [string] | string;
 };
 
-declare const MuiPhoneNumber: React.FC<MuiPhoneNumberProps>;
 
-export default MuiPhoneNumber;
+export default function MuiPhoneNumber(props: MuiPhoneNumberProps): JSX.Element;
